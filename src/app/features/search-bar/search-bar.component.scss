@@ -1,29 +1,32 @@
+@import "../../shared/styles/shared.scss";
+
 .search-container {
   width: 100%;
   height: 60px;
-  background-color: #323a45;
+  background-color: $header-background;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 4;
 
   .search-form {
-    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    align-items: center;
 
     .search-input {
       margin-left: 10px;
       padding: 10px;
-      width: 300px;
-      border-top-left-radius: 5px;
+      width: 700px;
+      border-radius: 5px;
       outline: none;
     }
 
     .search-button {
       border: none;
       outline: none;
-      background: #3f51b5;
+      background: $search-btn-color;
       padding: 10px;
       border-left: 1px solid rgba(0, 0, 0, 0.3);
       border-top-right-radius: 5px;
@@ -33,31 +36,68 @@
       transition-duration: 0.3s;
       cursor: pointer;
       &:hover {
-        color: #3f51b5;
+        color: $search-btn-color;
         background-color: #fff;
-        border: 1px solid #3f51b5;
+        border: 1px solid $search-btn-color;
       }
     }
     .logo {
       display: flex;
-      align-items: center;
-      margin-left: 10px;
+      justify-content: center;
       color: #fff;
       font-weight: 700;
       cursor: pointer;
       text-decoration: none;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
 
       .logo-letter {
-        display: inline-block;
+        width: 21px;
         border: 1px solid black;
         padding: 0 5px;
         margin-right: 2px;
         font-weight: bold;
+        border-radius: 40%;
+        display: flex;
+        justify-content: center;
+        transition: transform 0.3s ease;
       }
 
       .logo-text {
         margin-left: 5px;
       }
+    }
+  }
+
+  .contact-info {
+    margin-left: 10px;
+    color: $white;
+  }
+
+  .liked {
+    margin-left: 10px;
+    color: $white;
+  }
+  .shoping-cart {
+    margin-left: 20px;
+    color: $white;
+  }
+  .sign-up {
+    margin-left: 40px;
+    padding: 8px 14px;
+    background-color: transparent;
+    color: $white;
+    border: 1px solid $white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background-color: $white;
+      color: $header-background;
     }
   }
 }
