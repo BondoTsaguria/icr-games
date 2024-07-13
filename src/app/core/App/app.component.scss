@@ -1,0 +1,86 @@
+@import "../../shared/styles/shared.scss";
+
+.info-container {
+  background-color: #f8f9fa;
+  padding: 20px 0;
+
+  .subscription-field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+    margin: 0 auto;
+
+    .subscription-img-field {
+      .subscription-img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+      }
+    }
+
+    .subscription-info-field {
+      .subscription-header {
+        margin: 0;
+        font-size: 15px;
+        color: #343a40;
+      }
+
+      .subscription-text {
+        margin: 0;
+        color: #6c757d;
+      }
+    }
+
+    .subscription-input-field {
+      display: flex;
+      align-items: center;
+
+      input[type="email"] {
+        padding: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 10px;
+        margin-right: 2px;
+      }
+
+      .send-btn {
+        padding: 10px 20px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: center;
+  gap: 250px;
+  margin: 20px auto;
+  font-size: 20px;
+
+  .info-company,
+  .info-types,
+  .info-shop {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      margin: 5px 0;
+      color: #343a40;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

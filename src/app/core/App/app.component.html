@@ -1,2 +1,44 @@
 <app-search-bar></app-search-bar>
-<router-outlet></router-outlet>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<div class="info-container">
+  <div class="subscription-field">
+    <div class="subscription-img-field">
+      <img
+        src="../../../assets/images/platforms/gaming.jpg"
+        alt="Joystick"
+        class="subscription-img"
+      />
+    </div>
+    <div class="subscription-info-field">
+      <h3 class="subscription-header">Subscribe to out news</h3>
+      <p class="subscription-text">
+        Receive the information about discounts by E-mail!
+      </p>
+    </div>
+    <div class="subscription-input-field">
+      <input type="email" placeholder="Email" />
+      <button type="submit" class="send-btn">Send</button>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="info">
+    <div class="info-company">
+      <p>ICR Games</p>
+      <a routerLink="/about-us">About us</a>
+      <a routerLink="/faq">FAQ</a>
+    </div>
+    <div class="info-types">
+      <p>Type</p>
+      <p>PC</p>
+      <p>Console</p>
+    </div>
+    <div class="info-shop">
+      <p>Shop</p>
+      <p>Buy</p>
+      <p>Return</p>
+    </div>
+  </div>
+</footer>
