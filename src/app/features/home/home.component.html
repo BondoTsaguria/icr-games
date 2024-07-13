@@ -1,1 +1,88 @@
+<div class="filters">
+  <button class="filter-button" (click)="searchGames('name')">Name</button>
+  <button class="filter-button" (click)="searchGames('released')">
+    Released
+  </button>
+  <button class="filter-button" (click)="searchGames('added')">Added</button>
+  <button class="filter-button" (click)="searchGames('created')">
+    Created
+  </button>
+  <button class="filter-button" (click)="searchGames('updated')">
+    Updated
+  </button>
+  <button class="filter-button" (click)="searchGames('-rating')">Rating</button>
+  <button class="filter-button" (click)="searchGames('metacritic')">
+    Metacritic
+  </button>
+</div>
 
+<!-- <div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img
+        src="../../../assets/images/platforms/r.jpg"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="../../../assets/images/platforms/r2.jpg"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+    <div class="carousel-item">
+      <img
+        src="../../../assets/images/platforms/r.jpg"
+        class="d-block w-100"
+        alt="..."
+      />
+    </div>
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExample"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExample"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div> -->
+
+<div class="games">
+  <ng-container *ngFor="let game of games">
+    <div class="game" (click)="openGameDetails(game.id)">
+      <div class="game-thumb-container">
+        <img
+          *ngIf="game.background_image"
+          src="{{ game.background_image }}"
+          alt="thumbnail"
+          class="game-thumbnail"
+        />
+        <p *ngIf="!game.background_image">No image</p>
+      </div>
+      <div class="game-description">
+        <p class="game-name">{{ game.name }}</p>
+        <div class="game-platforms">
+          <img
+            *ngFor="let gamePlatform of game.parent_platforms"
+            src="assets/images/platforms/{{ gamePlatform.platform.slug }}.svg"
+            alt="{{ gamePlatform.platform.slug }}"
+            class="game-platform"
+          />
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
