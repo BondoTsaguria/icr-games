@@ -1,128 +1,36 @@
-<div class="form-container">
-  <h2 class="heading">Sign up</h2>
-  <form class="sign-up" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
-    <!-- Email Field -->
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" formControlName="email" />
-      <div
-        class="error"
-        *ngIf="
-          formGroupSubmitted && formGroup.get('email')?.hasError('required')
-        "
-      >
-        Email is required
-      </div>
-      <div class="error" *ngIf="formGroup.get('email')?.hasError('email')">
-        Invalid email address
-      </div>
-    </div>
-
-    <!-- Password Field -->
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" id="password" formControlName="password" />
-      <div
-        class="error"
-        *ngIf="
-          formGroupSubmitted && formGroup.get('password')?.hasError('required')
-        "
-      >
-        Password is required
-      </div>
-      <div class="error" *ngIf="formGroup.get('password')?.hasError('pattern')">
-        Invalid password format
-      </div>
-      <div
-        class="error"
-        *ngIf="formGroup.get('password')?.hasError('minlength')"
-      >
-        Password must be at least 8 characters long
-      </div>
-    </div>
-
-    <!-- Confirm Password Field -->
-    <div class="form-group">
-      <label for="confirmPassword">Confirm Password</label>
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form (submit)="onSignUp(signupForm)" #signupForm="ngForm">
+    <mat-form-field>
       <input
-        type="password"
-        id="confirmPassword"
-        formControlName="confirmPassword"
+        matInput
+        type="email"
+        name="email"
+        ngModel
+        placeholder="Email"
+        #emailInput="ngModel"
+        required
+        email
       />
-      <div
-        class="error"
-        *ngIf="
-          formGroupSubmitted &&
-          formGroup.get('confirmPassword')?.hasError('required')
-        "
+      <mat-error *ngIf="emailInput.invalid"
+        >Please enter a valid email</mat-error
       >
-        Confirm Password is required
-      </div>
-      <div
-        class="error"
-        *ngIf="formGroup.get('confirmPassword')?.hasError('passwordMismatch')"
-      >
-        Passwords do not match
-      </div>
-    </div>
+    </mat-form-field>
 
-    <!-- Nickname Field -->
-    <div class="form-group">
-      <label for="nickname">Nickname</label>
-      <input type="text" id="nickname" formControlName="nickname" />
-      <div
-        class="error"
-        *ngIf="
-          formGroupSubmitted && formGroup.get('nickname')?.hasError('required')
-        "
+    <mat-form-field>
+      <input
+        matInput
+        type="password"
+        name="password"
+        ngModel
+        placeholder="Password"
+        #passwordInput="ngModel"
+        required
+      />
+      <mat-error *ngIf="passwordInput.invalid"
+        >Please enter a valid password</mat-error
       >
-        Nickname is required
-      </div>
-      <div class="error" *ngIf="formGroup.get('nickname')?.hasError('pattern')">
-        Invalid nickname format
-      </div>
-    </div>
-
-    <!-- Phone Number Field -->
-    <div class="form-group">
-      <label for="phoneNumber">Phone Number</label>
-      <input type="text" id="phoneNumber" formControlName="phoneNumber" />
-      <div
-        class="error"
-        *ngIf="
-          formGroupSubmitted &&
-          formGroup.get('phoneNumber')?.hasError('required')
-        "
-      >
-        Phone Number is required
-      </div>
-      <div
-        class="error"
-        *ngIf="formGroup.get('phoneNumber')?.hasError('pattern')"
-      >
-        Invalid phone number format
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label>
-        <input type="checkbox" formControlName="agreement" /> I have read the
-        agreement
-      </label>
-    </div>
-
-    <button
-      class="register-btn"
-      type="submit"
-      [disabled]="
-        !formGroup.get('agreement')?.value ||
-        (formGroup.get('password')?.value !==
-          formGroup.get('confirmPassword')?.value &&
-          (formGroup.get('password')?.value !== '' ||
-            formGroup.get('confirmPassword')?.value !== ''))
-      "
-    >
-      Sign up
-    </button>
+    </mat-form-field>
+    <button type="submit">Sign up</button>
   </form>
-</div>
+</mat-card>

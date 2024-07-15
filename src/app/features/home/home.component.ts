@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { APIResponse, Game } from 'src/app/shared/interfaces/models';
+import { AuthService } from 'src/app/shared/services/auth.service';
 import { HttpService } from 'src/app/shared/services/http.service';
 
 @Component({
@@ -9,28 +10,34 @@ import { HttpService } from 'src/app/shared/services/http.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent implements OnDestroy {
+export class HomeComponent implements OnInit, OnDestroy {
   sort!: string;
   games!: Array<Game>;
   private routeSub!: Subscription;
   private gameSub!: Subscription;
   bang!: object;
+  isAuthenticated = false;
 
   constructor(
     private httpService: HttpService,
     private activatedRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {}
 
-  // ngOnInit(): void {
-  //   this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
-  //     if (params['game-search']) {
-  //       this.searchGames('metacrit', params['game-search']);
-  //     } else {
-  //       this.searchGames('metacrit');
-  //     }
-  //   });
-  // }
+  ngOnInit(): void {
+    this.isAuthenticated = this.authService.getIsAuth();
+    this.authService.getAuthStatusListener().subscribe((isAuthenticated) => {
+      this.isAuthenticated = isAuthenticated;
+    });
+    this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
+      if (params['game-search']) {
+        this.searchGames('metacrit', params['game-search']);
+      } else {
+        this.searchGames('metacrit');
+      }
+    });
+  }
 
   searchGames(sort: string, search?: string): void {
     this.gameSub = this.httpService

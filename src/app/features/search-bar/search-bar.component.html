@@ -13,7 +13,7 @@
       ngModel
       placeholder="Search 500,000 + games"
     />
-    <button class="search-button">Search</button>
+    <button class="search-button" [disabled]="!isAuthenticated">Search</button>
 
     <span class="contact-info">
       <i class="fa-solid fa-phone"></i>
@@ -25,6 +25,12 @@
     <span class="shoping-cart">
       <i class="fa-solid fa-cart-shopping"></i>
     </span>
-    <button class="sign-up">Log in</button>
+
+    <button *ngIf="!isAuthenticated" class="login" (click)="onLogin()">
+      Log in
+    </button>
+    <button *ngIf="isAuthenticated" class="logout" (click)="onLogout()">
+      Log out
+    </button>
   </form>
 </div>

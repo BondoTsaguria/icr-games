@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SignupComponent } from 'src/app/features/auth/sign-up/sign-up.component';
 import { DetailsComponent } from 'src/app/features/details/details.component';
 import { HomeComponent } from 'src/app/features/home/home.component';
 import { AboutUsComponent } from 'src/app/features/info/about-us/about-us.component';
@@ -14,6 +15,10 @@ const routes: Routes = [
   },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'faq', component: FaqComponent },
+  {
+    path: 'sign-up',
+    component: SignupComponent,
+  },
 ];
 
 @NgModule({
