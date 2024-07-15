@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/user.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
-import { UserData } from 'src/app/shared/interfaces/user-data.interface';
+import { UserData } from '../../../shared/interfaces/user-data.interface';
 
 @Component({
   selector: 'app-login',
