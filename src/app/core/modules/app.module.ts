@@ -11,6 +11,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppComponent } from '../App/app.component';
 import { SearchBarComponent } from 'src/app/features/search-bar/search-bar.component';
@@ -41,6 +42,7 @@ import { HttpErrorsInterceptor } from 'src/app/shared/interceptors/http-errors.i
     MatIconModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatDialogModule,
   ],
   providers: [
     {
