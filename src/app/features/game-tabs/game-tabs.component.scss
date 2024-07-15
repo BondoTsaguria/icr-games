@@ -1,49 +1,157 @@
-.game {
-  &-tabs {
-    background: rgb(63 81 181 / 61%);
-    color: #fff;
-    text-align: left;
-    padding: 10px;
+@import "../../shared/styles/shared.scss";
 
-    &-par {
-      padding: 20px 20px 0 20px;
-      margin-bottom: 0;
-    }
-
-    &-link {
+@media #{$desktop} {
+  .game {
+    &-tabs {
+      background: rgb(63 81 181 / 61%);
       color: #fff;
-    }
+      text-align: left;
+      padding: 10px;
 
-    &-votes {
-      margin-left: 20px;
-      display: flex;
+      &-par {
+        padding: 20px 20px 0 20px;
+        margin-bottom: 0;
+      }
 
-      &-count {
-        margin-left: 5px;
+      &-link {
+        color: #fff;
+      }
+
+      &-votes {
+        margin-left: 20px;
+        display: flex;
+
+        &-count {
+          margin-left: 5px;
+        }
+      }
+
+      ::ng-deep .mat-tab-label {
+        justify-content: center;
       }
     }
 
-    ::ng-deep .mat-tab-label {
-      justify-content: center;
+    &-votes {
+      &-up {
+        color: #5ee432;
+      }
+      &-down {
+        color: #ef4655;
+      }
+
+      &-count {
+        margin-left: 5px;
+        margin-right: 10px;
+        vertical-align: super;
+      }
+    }
+
+    &-description {
+      padding: 20px;
     }
   }
+}
 
-  &-votes {
-    &-up {
-      color: #5ee432;
-    }
-    &-down {
-      color: #ef4655;
+@media #{$tablet} {
+  .game {
+    &-tabs {
+      background: rgb(63 81 181 / 61%);
+      color: #fff;
+      text-align: left;
+      padding: 7px;
+
+      &-par {
+        padding: 14px 14px 0 14px;
+        margin-bottom: 0;
+      }
+
+      &-link {
+        color: #fff;
+      }
+
+      &-votes {
+        margin-left: 14px;
+        display: flex;
+
+        &-count {
+          margin-left: 3px;
+        }
+      }
+
+      ::ng-deep .mat-tab-label {
+        justify-content: center;
+      }
     }
 
-    &-count {
-      margin-left: 5px;
-      margin-right: 10px;
-      vertical-align: super;
+    &-votes {
+      &-up {
+        color: #5ee432;
+      }
+      &-down {
+        color: #ef4655;
+      }
+
+      &-count {
+        margin-left: 3px;
+        margin-right: 6px;
+        vertical-align: super;
+      }
+    }
+
+    &-description {
+      padding: 14px;
     }
   }
+}
 
-  &-description {
-    padding: 20px;
+@media #{$mobile} {
+  .game {
+    &-tabs {
+      background: rgb(63 81 181 / 61%);
+      color: #fff;
+      text-align: left;
+      padding: 3px;
+
+      &-par {
+        padding: 9px 9px 0 9px;
+        margin-bottom: 0;
+      }
+
+      &-link {
+        color: #fff;
+      }
+
+      &-votes {
+        margin-left: 10px;
+        display: flex;
+
+        &-count {
+          margin-left: 1.5px;
+        }
+      }
+
+      ::ng-deep .mat-tab-label {
+        justify-content: center;
+      }
+    }
+
+    &-votes {
+      &-up {
+        color: #5ee432;
+      }
+      &-down {
+        color: #ef4655;
+      }
+
+      &-count {
+        margin-left: 1.5px;
+        margin-right: 3px;
+        vertical-align: super;
+      }
+    }
+
+    &-description {
+      padding: 8px;
+    }
   }
 }

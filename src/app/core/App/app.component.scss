@@ -1,86 +1,265 @@
 @import "../../shared/styles/shared.scss";
 
-.info-container {
-  background-color: #f8f9fa;
-  padding: 20px 0;
+@media #{$desktop} {
+  .info-container {
+    background-color: #f8f9fa;
+    padding: 20px 0;
 
-  .subscription-field {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 150px;
-    margin: 0 auto;
-
-    .subscription-img-field {
-      .subscription-img {
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-      }
-    }
-
-    .subscription-info-field {
-      .subscription-header {
-        margin: 0;
-        font-size: 15px;
-        color: #343a40;
-      }
-
-      .subscription-text {
-        margin: 0;
-        color: #6c757d;
-      }
-    }
-
-    .subscription-input-field {
+    .subscription-field {
       display: flex;
       align-items: center;
+      justify-content: center;
+      gap: 150px;
+      margin: 0 auto;
 
-      input[type="email"] {
-        padding: 10px;
-        border: 1px solid #ced4da;
-        border-radius: 10px;
-        margin-right: 2px;
+      .subscription-img-field {
+        .subscription-img {
+          border-radius: 50%;
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+        }
       }
 
-      .send-btn {
-        padding: 10px 20px;
-        border: none;
-        background-color: #007bff;
-        color: white;
-        border-radius: 4px;
-        cursor: pointer;
+      .subscription-info-field {
+        .subscription-header {
+          margin: 0;
+          font-size: 15px;
+          color: #343a40;
+        }
+
+        .subscription-text {
+          margin: 0;
+          color: #6c757d;
+        }
+      }
+
+      .subscription-input-field {
+        display: flex;
+        align-items: center;
+
+        input[type="email"] {
+          padding: 10px;
+          border: 1px solid #ced4da;
+          border-radius: 10px;
+          margin-right: 2px;
+        }
+
+        .send-btn {
+          padding: 10px 20px;
+          border: none;
+          background-color: #007bff;
+          color: white;
+          border-radius: 4px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: center;
+    gap: 250px;
+    margin: 20px auto;
+    font-size: 20px;
+
+    .info-company,
+    .info-types,
+    .info-shop {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      a {
+        margin: 5px 0;
+        color: #343a40;
+        text-decoration: none;
 
         &:hover {
-          background-color: #0056b3;
+          text-decoration: underline;
         }
       }
     }
   }
 }
 
-.info {
-  display: flex;
-  justify-content: center;
-  gap: 250px;
-  margin: 20px auto;
-  font-size: 20px;
+@media #{$tablet} {
+  .info-container {
+    background-color: #f8f9fa;
+    padding: 15px 0;
 
-  .info-company,
-  .info-types,
-  .info-shop {
+    .subscription-field {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      margin: 0 auto;
+
+      .subscription-img-field {
+        .subscription-img {
+          border-radius: 50%;
+          width: 65px;
+          height: 65px;
+          object-fit: cover;
+        }
+      }
+
+      .subscription-info-field {
+        .subscription-header {
+          margin: 0;
+          font-size: 10px;
+          color: #343a40;
+        }
+
+        .subscription-text {
+          margin: 0;
+          color: #6c757d;
+        }
+      }
+
+      .subscription-input-field {
+        display: flex;
+        align-items: center;
+
+        input[type="email"] {
+          padding: 5px;
+          border: 1px solid #ced4da;
+          border-radius: 10px;
+          margin-right: 2px;
+        }
+
+        .send-btn {
+          padding: 6px 14px;
+          border: none;
+          background-color: #007bff;
+          color: white;
+          border-radius: 4px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+      }
+    }
+  }
+
+  .info {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    justify-content: center;
+    gap: 100px;
+    margin: 15px auto;
+    font-size: 15px;
 
-    a {
-      margin: 5px 0;
-      color: #343a40;
-      text-decoration: none;
+    .info-company,
+    .info-types,
+    .info-shop {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
 
-      &:hover {
-        text-decoration: underline;
+      a {
+        margin: 4px 0;
+        color: #343a40;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@media #{$mobile} {
+  .info-container {
+    background-color: #f8f9fa;
+    padding: 8px 0;
+
+    .subscription-field {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 auto;
+
+      .subscription-img-field {
+        .subscription-img {
+          border-radius: 50%;
+          width: 35px;
+          height: 35px;
+          object-fit: cover;
+        }
+      }
+
+      .subscription-info-field {
+        .subscription-header {
+          margin: 0;
+          font-size: 10px;
+          color: #343a40;
+        }
+
+        .subscription-text {
+          margin: 0;
+          color: #6c757d;
+        }
+      }
+
+      .subscription-input-field {
+        display: flex;
+        align-items: center;
+
+        input[type="email"] {
+          padding: 2px;
+          border: 1px solid #ced4da;
+          border-radius: 10px;
+          margin-right: 1px;
+        }
+
+        .send-btn {
+          padding: 3px 6px;
+          border: none;
+          background-color: #007bff;
+          color: white;
+          border-radius: 4px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+      }
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 8px auto;
+    font-size: 15px;
+
+    .info-company,
+    .info-types,
+    .info-shop {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      a {
+        margin: 2px 0;
+        color: #343a40;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }

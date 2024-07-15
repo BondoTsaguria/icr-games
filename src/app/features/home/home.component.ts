@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private gameSub!: Subscription;
   bang!: object;
   isAuthenticated = false;
+  isMenuOpen = false;
 
   constructor(
     private httpService: HttpService,
@@ -49,6 +50,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   openGameDetails(id: string): void {
     this.router.navigate(['details', id]);
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
   ngOnDestroy(): void {

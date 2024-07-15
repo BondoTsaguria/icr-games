@@ -9,24 +9,29 @@
   position: sticky;
   top: 60px;
   background-color: $header-background;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 60px;
   z-index: 4;
 
-  .filter-button {
-    font-size: 20px;
-    padding: 8px 16px;
-    color: $white;
-    cursor: pointer;
-    background: none;
-    border: none;
-    outline: none;
-    transition: color 0.3s ease;
-    z-index: 4;
+  .check-btn {
+    display: none;
+  }
 
-    &:hover {
-      color: $search-btn-color;
+  .top-bar__actions {
+    display: flex;
+    gap: 20px;
+
+    .filter-button {
+      font-size: 20px;
+      padding: 8px 16px;
+      color: $white;
+      cursor: pointer;
+      background: none;
+      border: none;
+      outline: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $search-btn-color;
+      }
     }
   }
 }
@@ -44,56 +49,193 @@
     overflow: hidden;
     border-radius: 5px;
     background-color: #202020;
-    box-shadow: 4px 3px 8px 0px rgb(200, 152, 44, 0.1);
+    box-shadow: 4px 3px 8px 0px rgba(200, 152, 44, 0.1);
     transition-duration: 0.3s;
     cursor: pointer;
 
     &:hover {
-      box-shadow: 4px 3px 11px 6px rgb(200, 152, 44, 0.1);
+      box-shadow: 4px 3px 11px 6px rgba(200, 152, 44, 0.1);
       transform: translateY(-3px);
     }
 
-    &-thumb-container {
+    .game-thumb-container {
       background-color: #000;
       position: relative;
       height: 172px;
       color: $white;
       text-align: center;
+
+      .game-thumbnail {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        height: 172px;
+      }
     }
 
-    &-thumbnail {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      height: 172px;
-    }
-
-    &-description {
+    .game-description {
       padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       height: 157px;
+
+      .game-name {
+        color: $white;
+        font-weight: 700;
+        font-size: 22px;
+        margin-bottom: 20px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+
+      .game-platforms {
+        display: flex;
+
+        .game-platform {
+          width: 20px;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media #{$tablet} {
+  .filters {
+    padding-left: 15px;
+    gap: 35px;
+
+    .top-bar__actions {
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      height: auto;
+      width: 100%;
+      position: fixed;
+      top: 80px;
+      left: -100%;
+      transition: all 0.5s;
+      &.open {
+        left: 0;
+      }
+
+      .filter-button {
+        font-size: 17px;
+        padding: 6px 14px;
+        color: #ff0000;
+      }
     }
 
-    &-name {
+    .check-btn {
+      display: block;
+      font-size: 3rem;
       color: $white;
-      font-weight: 700;
-      font-size: 22px;
-      margin-bottom: 20px;
-      white-space: nowrap;
-      text-overflow: ellipsis;
-      overflow: hidden;
+      cursor: pointer;
+      margin-left: 1.2rem;
+    }
+  }
+
+  .games {
+    margin: 15px auto;
+
+    .game {
+      width: 280px;
+      margin: 17px;
+      height: 270px;
+
+      .game-thumb-container {
+        height: 172px;
+
+        .game-thumbnail {
+          height: 150px;
+        }
+      }
+
+      .game-description {
+        height: 130px;
+
+        .game-name {
+          font-size: 18px;
+          margin-bottom: 17px;
+        }
+
+        .game-platform {
+          width: 16px;
+          margin-right: 7px;
+        }
+      }
+    }
+  }
+}
+
+@media #{$mobile} {
+  .filters {
+    padding-left: 10px;
+    gap: 20px;
+
+    .top-bar__actions {
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      height: auto;
+      width: 100%;
+      position: fixed;
+      top: 80px;
+      left: -100%;
+      transition: all 0.5s;
+      &.open {
+        left: 0;
+      }
+
+      .filter-button {
+        font-size: 12px;
+        padding: 4px 10px;
+        color: #ff0000;
+      }
     }
 
-    &-platforms {
-      display: flex;
+    .check-btn {
+      display: block;
+      font-size: 16px;
+      color: $white;
+      cursor: pointer;
+      margin-left: 9px;
     }
-    &-platform {
-      width: 20px;
-      margin-right: 10px;
+  }
+
+  .games {
+    margin: 8px auto;
+
+    .game {
+      width: 150px;
+      margin: 12px;
+      height: 200px;
+
+      .game-thumb-container {
+        height: 120px;
+
+        .game-thumbnail {
+          height: 120px;
+        }
+      }
+
+      .game-description {
+        height: 100px;
+
+        .game-name {
+          font-size: 12px;
+          margin-bottom: 12px;
+        }
+
+        .game-platform {
+          width: 12px;
+          margin-right: 4px;
+        }
+      }
     }
   }
 }

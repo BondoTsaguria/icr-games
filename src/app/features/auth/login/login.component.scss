@@ -1,67 +1,207 @@
 @import "../../../shared/styles/shared.scss";
 
-mat-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-
-  mat-spinner {
-    margin: auto;
-  }
-
-  form {
-    width: 100%;
-    max-width: 400px;
+@media #{$desktop} {
+  mat-card {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
 
-    mat-form-field {
+    mat-spinner {
+      margin: auto;
+    }
+
+    form {
       width: 100%;
-      margin-bottom: 20px;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-      input {
-        font-size: 16px;
+      mat-form-field {
+        width: 100%;
+        margin-bottom: 20px;
+
+        input {
+          font-size: 16px;
+        }
+      }
+
+      button[type="submit"] {
+        width: 150px;
+        margin: 0 auto;
+        background-color: #1976d2;
+        color: white;
+        font-weight: bold;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #1565c0;
+        }
       }
     }
 
-    button[type="submit"] {
-      width: 150px;
-      margin: 0 auto;
-      background-color: #1976d2;
-      color: white;
-      font-weight: bold;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
+    .sign-up-container {
+      margin-top: 20px;
 
-      &:hover {
-        background-color: #1565c0;
+      p {
+        margin-bottom: 10px;
+      }
+
+      .sign-up-btn {
+        width: 100%;
+        height: 30px;
+        background-color: #4caf50;
+        color: white;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: #45a049;
+        }
       }
     }
   }
+}
 
-  .sign-up-container {
-    margin-top: 20px;
+@media #{$tablet} {
+  mat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
 
-    p {
-      margin-bottom: 10px;
+    mat-spinner {
+      margin: auto;
     }
 
-    .sign-up-btn {
+    form {
       width: 100%;
-      height: 30px;
-      background-color: #4caf50;
-      color: white;
-      font-weight: bold;
-      border: none;
-      outline: none;
-      border-radius: 10px;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
-      &:hover {
-        background-color: #45a049;
+      mat-form-field {
+        width: 100%;
+        margin-bottom: 20px;
+
+        input {
+          font-size: 12px;
+        }
+      }
+
+      button[type="submit"] {
+        width: 120px;
+        margin: 0 auto;
+        background-color: #1976d2;
+        color: white;
+        font-weight: bold;
+        border: none;
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #1565c0;
+        }
+      }
+    }
+
+    .sign-up-container {
+      margin-top: 20px;
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      .sign-up-btn {
+        width: 100%;
+        height: 20px;
+        background-color: #4caf50;
+        color: white;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: #45a049;
+        }
+      }
+    }
+  }
+}
+
+@media #{$mobile} {
+  mat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+
+    mat-spinner {
+      margin: auto;
+    }
+
+    form {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      mat-form-field {
+        width: 100%;
+        margin-bottom: 20px;
+
+        input {
+          font-size: 10px;
+        }
+      }
+
+      button[type="submit"] {
+        width: 100px;
+        margin: 0 auto;
+        background-color: #1976d2;
+        color: white;
+        font-weight: bold;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #1565c0;
+        }
+      }
+    }
+
+    .sign-up-container {
+      margin-top: 20px;
+
+      p {
+        margin-bottom: 10px;
+      }
+
+      .sign-up-btn {
+        width: 100%;
+        height: 20px;
+        background-color: #4caf50;
+        color: white;
+        font-weight: bold;
+        border: none;
+        outline: none;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: #45a049;
+        }
       }
     }
   }

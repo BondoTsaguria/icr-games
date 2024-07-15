@@ -1,77 +1,243 @@
-.details {
-  max-width: 900px;
-  margin: 20px auto;
-  position: relative;
+@import "../../shared/styles/shared.scss";
 
-  ::ng-deep mwl-gauge {
-    width: 150px;
-    height: 150px;
-    display: block;
-    padding: 10px;
+@media #{$desktop} {
+  .details {
+    max-width: 900px;
+    margin: 20px auto;
+    position: relative;
 
-    .dial {
-      stroke-width: 10;
+    ::ng-deep mwl-gauge {
+      width: 150px;
+      height: 150px;
+      display: block;
+      padding: 10px;
+
+      .dial {
+        stroke-width: 10;
+      }
+
+      .value {
+        stroke-dasharray: none;
+        stroke-width: 13;
+      }
+
+      .value-text {
+        fill: #fff;
+        font-weight: 700;
+        font-size: 24px;
+      }
     }
 
-    .value {
-      stroke-dasharray: none;
-      stroke-width: 13;
+    .game-gauge {
+      position: absolute;
+      top: 50px;
+      right: 0;
+
+      &-label {
+        font-size: 20px;
+        color: #fff;
+        position: relative;
+        bottom: 60px;
+      }
     }
 
-    .value-text {
-      fill: #fff;
-      font-weight: 700;
-      font-size: 24px;
+    .game {
+      &-banner {
+        height: 442px;
+        overflow: hidden;
+
+        &-img {
+          width: 100%;
+          filter: blur(5px);
+        }
+      }
+
+      &-content {
+        text-align: center;
+        position: relative;
+        top: -200px;
+      }
+
+      &-header {
+        &-title {
+          font-size: 70px;
+          color: #fff;
+          font-weight: 700;
+          line-height: 70px;
+          white-space: nowrap;
+        }
+
+        &-release-date {
+          color: #fff;
+          font-weight: 700;
+        }
+
+        &-genres {
+          color: #fff;
+          font-weight: 700;
+        }
+      }
     }
   }
+}
 
-  .game-gauge {
-    position: absolute;
-    top: 50px;
-    right: 0;
+@media #{$tablet} {
+  .details {
+    max-width: 900px;
+    margin: 15px auto;
+    position: relative;
 
-    &-label {
-      font-size: 20px;
-      color: #fff;
-      position: relative;
-      bottom: 60px;
+    ::ng-deep mwl-gauge {
+      width: 100px;
+      height: 100px;
+      display: block;
+      padding: 7px;
+
+      .dial {
+        stroke-width: 10;
+      }
+
+      .value {
+        stroke-dasharray: none;
+        stroke-width: 13;
+      }
+
+      .value-text {
+        fill: #fff;
+        font-weight: 700;
+        font-size: 16px;
+      }
+    }
+
+    .game-gauge {
+      position: absolute;
+      top: 50px;
+      right: 0;
+
+      &-label {
+        font-size: 14px;
+        color: #fff;
+        position: relative;
+        bottom: 60px;
+      }
+    }
+
+    .game {
+      &-banner {
+        height: 370px;
+        overflow: hidden;
+
+        &-img {
+          width: 100%;
+          filter: blur(5px);
+        }
+      }
+
+      &-content {
+        text-align: center;
+        position: relative;
+        top: -200px;
+      }
+
+      &-header {
+        &-title {
+          font-size: 40px;
+          color: #fff;
+          font-weight: 700;
+          line-height: 50px;
+          white-space: nowrap;
+        }
+
+        &-release-date {
+          color: #fff;
+          font-weight: 700;
+        }
+
+        &-genres {
+          color: #fff;
+          font-weight: 700;
+        }
+      }
     }
   }
+}
 
-  .game {
-    &-banner {
-      height: 442px;
-      overflow: hidden;
+@media #{$mobile} {
+  .details {
+    max-width: 900px;
+    margin: 8px auto;
+    position: relative;
 
-      &-img {
-        width: 100%;
-        filter: blur(5px);
+    ::ng-deep mwl-gauge {
+      width: 80px;
+      height: 80px;
+      display: block;
+      padding: 4px;
+
+      .dial {
+        stroke-width: 6;
+      }
+
+      .value {
+        stroke-dasharray: none;
+        stroke-width: 8;
+      }
+
+      .value-text {
+        fill: #fff;
+        font-weight: 700;
+        font-size: 12px;
       }
     }
 
-    &-content {
-      text-align: center;
-      position: relative;
-      top: -200px;
+    .game-gauge {
+      position: absolute;
+      top: 50px;
+      right: 0;
+
+      &-label {
+        font-size: 10px;
+        color: #fff;
+        position: relative;
+        bottom: 60px;
+      }
     }
 
-    &-header {
-      &-title {
-        font-size: 70px;
-        color: #fff;
-        font-weight: 700;
-        line-height: 70px;
-        white-space: nowrap;
+    .game {
+      &-banner {
+        height: 300px;
+        overflow: hidden;
+
+        &-img {
+          width: 100%;
+          filter: blur(5px);
+        }
       }
 
-      &-release-date {
-        color: #fff;
-        font-weight: 700;
+      &-content {
+        text-align: center;
+        position: relative;
+        top: -200px;
       }
 
-      &-genres {
-        color: #fff;
-        font-weight: 700;
+      &-header {
+        &-title {
+          font-size: 25px;
+          color: #fff;
+          font-weight: 700;
+          line-height: 30px;
+          white-space: nowrap;
+        }
+
+        &-release-date {
+          color: #fff;
+          font-weight: 700;
+        }
+
+        &-genres {
+          color: #fff;
+          font-weight: 700;
+        }
       }
     }
   }
