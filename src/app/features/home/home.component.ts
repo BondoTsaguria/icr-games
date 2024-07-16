@@ -31,13 +31,13 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.authService.getAuthStatusListener().subscribe((isAuthenticated) => {
       this.isAuthenticated = isAuthenticated;
     });
-    this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
-      if (params['game-search']) {
-        this.searchGames('metacrit', params['game-search']);
-      } else {
-        this.searchGames('metacrit');
-      }
-    });
+    // this.routeSub = this.activatedRoute.params.subscribe((params: Params) => {
+    //   if (params['game-search']) {
+    //     this.searchGames('metacrit', params['game-search']);
+    //   } else {
+    //     this.searchGames('metacrit');
+    //   }
+    // });
   }
 
   searchGames(sort: string, search?: string): void {

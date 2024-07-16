@@ -6,6 +6,8 @@ import { HomeComponent } from 'src/app/features/home/home.component';
 import { AboutUsComponent } from 'src/app/features/info/about-us/about-us.component';
 import { FaqComponent } from 'src/app/features/info/faq/faq.component';
 
+import { SignUpGuard } from 'src/app/features/auth/signUp.guard';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'search/:game-search', component: HomeComponent },
@@ -18,6 +20,7 @@ const routes: Routes = [
   {
     path: 'sign-up',
     component: SignupComponent,
+    canActivate: [SignUpGuard],
   },
 ];
 
